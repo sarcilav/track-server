@@ -1,0 +1,6 @@
+02-11 19:56:34 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ""REGISTERS"".* FROM ""REGISTERS"" WHERE (""REGISTERS"".""ID"" =  :[*]KORMA.SQL.UTILS/PRED #<ENGINE$DO_GROUP KORMA.SQL.ENGINE$DO_GROUP@5C52E935>, :KORMA.SQL.UTILS/ARGS ["" AND "" ( :KORMA.SQL.UTILS/PRED #<ENGINE$DO_INFIX KORMA.SQL.ENGINE$DO_INFIX@519CF40A>, :KORMA.SQL.UTILS/ARGS [ :KORMA.SQL.UTILS/GENERATED ""\""REGISTERS\"".\""SCOPE_IDENTITY()\""""  ""="" 4] )] ) "; expected "ALL, ANY, SOME, SELECT, FROM"; SQL statement:
+SELECT "REGISTERS".* FROM "REGISTERS" WHERE ("REGISTERS"."ID" =  :korma.sql.utils/pred #<engine$do_group korma.sql.engine$do_group@5c52e935>, :korma.sql.utils/args [" AND " ( :korma.sql.utils/pred #<engine$do_infix korma.sql.engine$do_infix@519cf40a>, :korma.sql.utils/args [ :korma.sql.utils/generated "\"REGISTERS\".\"SCOPE_IDENTITY()\""  "=" 4] )] ) [42001-175]
+02-11 20:09:23 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "1788678678678"; SQL statement:
+SELECT "DEVICES".* FROM "DEVICES" WHERE ("DEVICES"."IMEI" = ?) LIMIT 1 [22018-175]
