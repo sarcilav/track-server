@@ -9,7 +9,7 @@
   (info "*********\n" params  "\n*********\n"))
 
 (defn create-register [imei lat lng]
-  (cdebug (class (db/create-register imei lat lng))))
+  {:body (db/create-register imei lat lng)})
 
 (defroutes registers-routes
   (POST "/registers.json" [imei lat lng] (create-register imei lat lng)))
