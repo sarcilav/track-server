@@ -15,13 +15,15 @@
 (defentity registers
   (belongs-to device))
 
+(def now (new java.util.Date))
 (defn create-register [imei lat lng]
   (get-row registers
            (let [dev (get-or-create-device-by-imei imei)]
              (insert registers
                      (values {:device_id (:id dev)
                               :lat lat
-                              :lng lng})))))
+                              :lng lng
+                              :created_at now})))))
 
 (defentity devices
   (has-many registers))
@@ -29,7 +31,8 @@
 (defn create-device [imei]
   (get-row devices
            (insert devices
-                   (values {:imei imei}))))
+                   (values {:imei imei
+                            :created_at now}))))
 
 (defn get-device-by-imei [imei]
   (first (select devices
